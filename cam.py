@@ -8,7 +8,7 @@ import time
 if len(sys.argv)<=1:
     seuil=15
 else:
-    seuil = sys.argv[1]
+    seuil = float(sys.argv[1])
 
 #on determine le path
 if len(sys.argv)<=2:
@@ -20,7 +20,7 @@ else:
 camera = picamera.PiCamera()
 camera.hflip = True
 camera.vflip = True
-camera.resolution(2592, 1944)
+camera.resolution = (2592, 1944)
 
 #on determine le nom du fichier
 name = path+"/"+time.strftime('%y_%m_%d_%H_%M',time.localtime())+".jpg"
